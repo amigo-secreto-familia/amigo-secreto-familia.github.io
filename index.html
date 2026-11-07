@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amigo Secreto da Família</title>
+<meta name="description" content="Lista de presentes do Amigo Secreto da Família — 24/12 às 20:30">
+<meta name="theme-color" content="#8c1c1c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: faixa vermelha de topo com neve e cartão do evento; abaixo, uma coluna estreita de botões grandes. Tema único (claro) por escolha. */
+:root {
+  --vermelho: #8c1c1c;
+  --vermelho-vivo: #b3261e;
+  --pinheiro: #1f5132;
+  --pinheiro-claro: #2e6b45;
+  --ouro: #e0b04a;
+  --papel: #faf6ef;
+  --cartao: #ffffff;
+  --tinta: #24221f;
+  --tinta-suave: #5f5a52;
+  --linha: #e7dfd2;
+  --font-titulo: "Mountains of Christmas", "Georgia", serif;
+  --font-texto: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --raio: 18px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--font-texto);
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; }
+
+/* ---------- Topo ---------- */
+.topo {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 0%, var(--vermelho-vivo) 0%, var(--vermelho) 70%);
+  color: #fff;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.neve {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff 50%, transparent 51%),
+    radial-gradient(3px 3px at 80px 120px, #ffffffcc 50%, transparent 51%),
+    radial-gradient(2px 2px at 150px 70px, #fff 50%, transparent 51%),
+    radial-gradient(2.5px 2.5px at 200px 160px, #ffffffaa 50%, transparent 51%),
+    radial-gradient(2px 2px at 260px 40px, #fff 50%, transparent 51%);
+  background-size: 300px 200px;
+  opacity: .55;
+  animation: cair 14s linear infinite;
+}
+@keyframes cair { from { background-position: 0 0; } to { background-position: 40px 200px; } }
+@media (prefers-reduced-motion: reduce) { .neve { animation: none; } }
+.topo-dentro {
+  position: relative;
+  max-width: 640px; margin: 0 auto;
+  padding-block: 22px 26px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  text-align: center;
+}
+.festao { font-size: 30px; letter-spacing: 6px; line-height: 1; margin-bottom: 4px; }
+h1 {
+  font-family: var(--font-titulo);
+  font-size: clamp(38px, 11vw, 58px);
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+  text-shadow: 0 2px 0 #00000033;
+}
+h1 span { color: var(--ouro); display: block; }
+.evento {
+  margin: 18px auto 0;
+  max-width: 460px;
+  background: #ffffff14;
+  border: 1px solid #ffffff33;
+  border-radius: var(--raio);
+  padding: 12px 16px;
+  display: grid; gap: 6px;
+  text-align: left;
+}
+.evento-linha { display: flex; gap: 10px; align-items: flex-start; }
+.evento-linha b { font-weight: 800; }
+.evento a { color: #fff; }
+.contagem {
+  display: inline-block; margin-top: 12px;
+  background: var(--ouro); color: #3a2a06;
+  font-weight: 800; font-size: 15px;
+  padding: 5px 14px; border-radius: 999px;
+}
+
+/* Nas telas internas o topo fica compacto */
+body.compacto .evento, body.compacto .contagem, body.compacto .festao { display: none !important; }
+body.compacto .topo-dentro { padding-block: 12px 14px; }
+body.compacto h1 { font-size: 30px; }
+body.compacto h1 span { display: inline; }
+body.compacto h1 a { color: inherit; text-decoration: none; }
+
+/* ---------- Conteúdo ---------- */
+main {
+  max-width: 640px; margin: 0 auto;
+  padding-block: 22px 60px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.voltar {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: 2px solid var(--linha); border-radius: 999px;
+  padding: 8px 18px 8px 14px; font-weight: 700; cursor: pointer;
+  color: var(--tinta-suave); margin-bottom: 16px;
+}
+.voltar:hover { border-color: var(--tinta-suave); color: var(--tinta); }
+h2 { font-size: 26px; line-height: 1.2; margin: 0 0 6px; text-wrap: balance; }
+.dica { color: var(--tinta-suave); margin: 0 0 20px; }
+
+.escolhas { display: grid; gap: 16px; }
+.grande {
+  display: flex; align-items: center; gap: 16px;
+  width: 100%; text-align: left;
+  border: none; border-radius: var(--raio);
+  padding: 22px 20px; cursor: pointer;
+  color: #fff; font-size: 22px; font-weight: 800; line-height: 1.2;
+  box-shadow: 0 6px 0 #00000026;
+  transition: transform .08s;
+}
+.grande:active { transform: translateY(3px); box-shadow: 0 3px 0 #00000026; }
+.grande small { display: block; font-size: 16px; font-weight: 600; opacity: .9; margin-top: 4px; }
+.grande .ico { font-size: 42px; line-height: 1; flex: none; }
+.g-verde { background: var(--pinheiro); }
+.g-vermelho { background: var(--vermelho-vivo); }
+
+.pessoas { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.pessoa {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: var(--cartao); border: 2px solid var(--linha); border-radius: var(--raio);
+  padding: 18px 10px 14px; cursor: pointer;
+  font-size: 20px; font-weight: 800;
+  transition: border-color .15s, transform .08s;
+}
+.pessoa:hover { border-color: var(--pinheiro-claro); }
+.pessoa:active { transform: scale(.98); }
+.bola {
+  width: 62px; height: 62px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: #fff; font-size: 28px; font-weight: 800;
+  box-shadow: inset 0 -5px 0 #00000022;
+  position: relative;
+}
+.bola::before { /* o ganchinho da bola de Natal */
+  content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
+  width: 14px; height: 9px; border-radius: 3px 3px 0 0; background: var(--ouro);
+}
+.qtd { font-size: 14px; font-weight: 600; color: var(--tinta-suave); }
+
+/* ---------- Lista de presentes ---------- */
+.cabeca-pessoa { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.cabeca-pessoa .bola { flex: none; }
+.cabeca-pessoa h2 { margin: 0; }
+.cabeca-pessoa p { margin: 2px 0 0; color: var(--tinta-suave); }
+.presentes { display: grid; gap: 16px; }
+.presente {
+  background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 2px 10px #5a3a1a10;
+}
+.presente-foto { width: 100%; max-height: 340px; object-fit: contain; background: #f3eee6; }
+.presente-corpo { padding: 16px 18px 18px; display: grid; gap: 10px; }
+.presente-nome { font-size: 21px; font-weight: 800; margin: 0; line-height: 1.25; overflow-wrap: anywhere; }
+.presente-obs { margin: 0; color: var(--tinta-suave); white-space: pre-wrap; overflow-wrap: anywhere; }
+.acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border-radius: 12px; padding: 12px 18px; border: 2px solid transparent;
+  font-weight: 800; font-size: 17px; cursor: pointer; text-decoration: none;
+  min-height: 50px;
+}
+.btn-loja { background: var(--pinheiro); color: #fff; }
+.btn-loja:hover { background: var(--pinheiro-claro); }
+.btn-claro { background: #fff; border-color: var(--linha); color: var(--tinta); }
+.btn-claro:hover { border-color: var(--tinta-suave); }
+.btn-perigo { background: #fff; border-color: #f0c9c6; color: var(--vermelho-vivo); }
+.btn-perigo.confirmar { background: var(--vermelho-vivo); color: #fff; border-color: var(--vermelho-vivo); }
+.btn-principal { background: var(--vermelho-vivo); color: #fff; width: 100%; font-size: 20px; min-height: 60px; box-shadow: 0 5px 0 #00000026; }
+.btn-principal:active { transform: translateY(2px); box-shadow: 0 3px 0 #00000026; }
+.btn[disabled] { opacity: .6; cursor: wait; }
+
+.vazio {
+  text-align: center; background: var(--cartao); border: 2px dashed var(--linha);
+  border-radius: var(--raio); padding: 30px 20px; color: var(--tinta-suave);
+}
+.vazio .grande-emoji { font-size: 46px; display: block; margin-bottom: 6px; }
+
+/* ---------- Formulário ---------- */
+.form { display: grid; gap: 18px; }
+.campo { display: grid; gap: 6px; }
+.campo label { font-weight: 800; font-size: 18px; }
+.campo .ajuda { font-size: 15px; color: var(--tinta-suave); margin-top: -2px; }
+.campo input[type=text], .campo input[type=url], .campo textarea {
+  width: 100%; border: 2px solid var(--linha); border-radius: 12px;
+  padding: 14px; background: #fff; font-size: 18px;
+}
+.campo input:focus, .campo textarea:focus { border-color: var(--pinheiro-claro); outline: none; }
+.campo textarea { min-height: 96px; resize: vertical; }
+.foto-caixa {
+  border: 2px dashed var(--linha); border-radius: var(--raio); background: #fff;
+  padding: 14px; display: grid; gap: 12px; justify-items: center; text-align: center;
+}
+.foto-caixa img { max-height: 260px; border-radius: 10px; }
+.foto-botoes { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.foto-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.erro { color: var(--vermelho-vivo); font-weight: 700; margin: 0; }
+
+/* ---------- Aviso (toast) ---------- */
+.aviso {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  background: var(--pinheiro); color: #fff; font-weight: 800;
+  padding: 14px 22px; border-radius: 999px; box-shadow: 0 8px 24px #0004;
+  max-width: calc(100% - 32px); text-align: center; z-index: 50;
+}
+.carregando { text-align: center; color: var(--tinta-suave); padding: 30px 0; }
+.rodape { text-align: center; color: var(--tinta-suave); font-size: 15px; margin-top: 36px; }
+.modo-teste { background: #fff3cd; color: #6b4e00; text-align: center; font-size: 14px; padding: 6px 12px; }
+</style>
+</head>
+<body>
+
+<div id="modoTeste" class="modo-teste" hidden>Modo de teste: os presentes ficam salvos só neste aparelho.</div>
+
+<header class="topo">
+  <div class="neve" aria-hidden="true"></div>
+  <div class="topo-dentro">
+    <div class="festao" aria-hidden="true">🎄🎁⭐</div>
+    <h1><a href="#" style="color:inherit;text-decoration:none">Amigo Secreto <span>da Família</span></a></h1>
+    <div class="evento">
+      <div class="evento-linha"><span aria-hidden="true">📅</span><span><b>24 de dezembro</b>, às <b>20:30</b></span></div>
+      <div class="evento-linha"><span aria-hidden="true">📍</span><span><a id="linkMapa" href="https://www.google.com/maps/search/?api=1&query=Rua+Roger+Bastide+87" target="_blank" rel="noopener">Roger Bastide, 87 · Ap 8</a></span></div>
+    </div>
+    <div id="contagem" class="contagem" hidden></div>
+  </div>
+</header>
+
+<main id="app" aria-live="polite"></main>
+
+<div id="aviso" class="aviso" role="status" hidden></div>
+
+<script>
+// ====== CONFIGURAÇÃO ======
+// Banco de dados (Supabase). A chave abaixo é pública por natureza: o acesso é controlado pelas regras do banco.
+// Se SUPABASE ficar null, o site roda em "modo de teste" (salva só no aparelho).
+const SUPABASE = {
+  url: "https://fhzsiygirlzfzafdwtxw.supabase.co",
+  chave: "sb_publishable_vPyHFrfd7ZgFv9d_v0uIOQ_aOZvkbXE",
+};
+
+const PESSOAS = [
+  { id: "paulo",   nome: "Paulo",   cor: "#b3261e" },
+  { id: "leticia", nome: "Letícia", cor: "#1f5132" },
+  { id: "sophia",  nome: "Sophia",  cor: "#a8742a" },
+  { id: "gerson",  nome: "Gerson",  cor: "#2b4f7a" },
+  { id: "nani",    nome: "Nani",    cor: "#7a2b5c" },
+  { id: "paula",   nome: "Paula",   cor: "#c2531f" },
+  { id: "grilo",   nome: "Grilo",   cor: "#3f6b2a" },
+];
+const DATA_FESTA = new Date("2026-12-24T20:30:00-03:00");
+
+// ====== DADOS ======
+function criarStore() {
+  if (SUPABASE) {
+    const base = SUPABASE.url + "/rest/v1/presentes";
+    const cab = { apikey: SUPABASE.chave, "Content-Type": "application/json", Prefer: "return=minimal" };
+    const pedir = async (url, opcoes = {}) => {
+      const r = await fetch(url, { ...opcoes, headers: cab });
+      if (!r.ok) throw new Error("Erro " + r.status + ": " + await r.text());
+      return r;
+    };
+    // Banco usa nomes com "_"; o site usa criadoEm/atualizadoEm
+    const paraBanco = p => ({ pessoa: p.pessoa, nome: p.nome, link: p.link || "", obs: p.obs || "", foto: p.foto || "",
+      criado_em: new Date(p.criadoEm).toISOString(), atualizado_em: new Date(p.atualizadoEm).toISOString() });
+    const doBanco = l => ({ ...l, criadoEm: Date.parse(l.criado_em), atualizadoEm: Date.parse(l.atualizado_em) });
+    let ok = () => {}, erro = () => {};
+    let buscando = false;
+    const buscar = async () => {
+      if (buscando) return; buscando = true;
+      try { const r = await pedir(base + "?select=*&order=criado_em"); ok((await r.json()).map(doBanco)); }
+      catch (e) { console.error(e); erro(e); }
+      finally { buscando = false; }
+    };
+    // Atualiza quando a pessoa volta para a aba/app e de tempos em tempos
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) buscar(); });
+    setInterval(() => { if (!document.hidden) buscar(); }, 60000);
+    return {
+      ouvir(fOk, fErro) { ok = fOk; erro = fErro; buscar(); },
+      async adicionar(p) { await pedir(base, { method: "POST", body: JSON.stringify(paraBanco(p)) }); await buscar(); },
+      async alterar(id, p) { await pedir(base + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: JSON.stringify(paraBanco(p)) }); await buscar(); },
+      async apagar(id) { await pedir(base + "?id=eq." + encodeURIComponent(id), { method: "DELETE" }); await buscar(); },
+    };
+  }
+  // Modo de teste: localStorage
+  document.getElementById("modoTeste").hidden = false;
+  const CHAVE = "amigo-secreto-teste";
+  let ouvintes = [];
+  const ler = () => { try { return JSON.parse(localStorage.getItem(CHAVE) || "[]"); } catch { return []; } };
+  const gravar = l => { try { localStorage.setItem(CHAVE, JSON.stringify(l)); } catch (e) { throw new Error("Sem espaço no aparelho"); } ouvintes.forEach(f => f(ler())); };
+  return {
+    ouvir(ok) { ouvintes.push(ok); setTimeout(() => ok(ler()), 150); return () => {}; },
+    async adicionar(p) { const l = ler(); l.push({ id: "t" + Date.now(), ...p }); gravar(l); },
+    async alterar(id, p) { gravar(ler().map(x => x.id === id ? { id, ...p } : x)); },
+    async apagar(id) { gravar(ler().filter(x => x.id !== id)); },
+  };
+}
+
+const store = criarStore();
+let presentes = null; // null = carregando
+let erroCarga = null;
+
+store.ouvir(lista => { presentes = lista; erroCarga = null; desenhar(); },
+            err => { if (presentes === null) { erroCarga = err; desenhar(); } });
+setTimeout(() => { if (presentes === null && !erroCarga) { erroCarga = new Error("timeout"); desenhar(); } }, 15000);
+
+// ====== UTILITÁRIOS ======
+const $app = document.getElementById("app");
+const pessoa = id => PESSOAS.find(p => p.id === id);
+const doPessoa = id => (presentes || []).filter(g => g.pessoa === id).sort((a, b) => (a.criadoEm || 0) - (b.criadoEm || 0));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const plural = (n, um, varios) => n === 1 ? `1 ${um}` : `${n} ${varios}`;
+
+function limparLink(txt) {
+  txt = (txt || "").trim();
+  if (!txt) return "";
+  // Se colaram um texto de compartilhamento ("Olha isso! https://..."), pega só o link
+  const m = txt.match(/https?:\/\/\S+/i);
+  if (m) return m[0];
+  if (/^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(txt)) return "https://" + txt;
+  return null; // não parece um link
+}
+function nomeDaLoja(url) {
+  try { return new URL(url).hostname.replace(/^www\./, "").split(".")[0]; } catch { return ""; }
+}
+function bola(p, tam) {
+  const st = tam ? `style="background:${p.cor};width:${tam}px;height:${tam}px;font-size:${Math.round(tam * .45)}px"` : `style="background:${p.cor}"`;
+  return `<span class="bola" ${st} aria-hidden="true">${esc(p.nome[0])}</span>`;
+}
+
+let avisoTimer;
+function avisar(msg) {
+  const el = document.getElementById("aviso");
+  el.textContent = msg; el.hidden = false;
+  clearTimeout(avisoTimer); avisoTimer = setTimeout(() => el.hidden = true, 2600);
+}
+
+async function comprimirFoto(file) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((ok, falha) => { const i = new Image(); i.onload = () => ok(i); i.onerror = falha; i.src = url; });
+    const max = 720;
+    const s = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+    const c = document.createElement("canvas");
+    c.width = Math.round(img.naturalWidth * s); c.height = Math.round(img.naturalHeight * s);
+    const ctx = c.getContext("2d");
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height);
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    let q = 0.78, out = c.toDataURL("image/jpeg", q);
+    while (out.length > 220000 && q > 0.35) { q -= 0.1; out = c.toDataURL("image/jpeg", q); }
+    return out;
+  } finally { URL.revokeObjectURL(url); }
+}
+
+// ====== NAVEGAÇÃO (pelo # do endereço, para o botão "voltar" do celular funcionar) ======
+let navegouAqui = false;
+function ir(rota) { navegouAqui = true; location.hash = rota; }
+function voltarPara(rota) {
+  if (navegouAqui && history.length > 1) history.back();
+  else location.replace("#" + rota);
+}
+window.addEventListener("hashchange", () => { delete $app.dataset.form; desenhar(); window.scrollTo(0, 0); });
+
+function rotaAtual() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const [tela, quem, ...resto] = h.split("-");
+  return { tela: tela || "inicio", quem, extra: resto.join("-") };
+}
+
+// ====== TELAS ======
+function desenhar() {
+  const r = rotaAtual();
+  document.body.classList.toggle("compacto", r.tela !== "inicio");
+  if (r.tela === "ver" && !r.quem) return telaEscolher("ver");
+  if (r.tela === "editar" && !r.quem) return telaEscolher("editar");
+  if (r.tela === "ver" && pessoa(r.quem)) return telaVer(pessoa(r.quem));
+  if (r.tela === "editar" && pessoa(r.quem)) return telaEditar(pessoa(r.quem));
+  if (r.tela === "presente" && pessoa(r.quem)) return telaForm(pessoa(r.quem), r.extra);
+  telaInicio();
+}
+
+function telaInicio() {
+  $app.innerHTML = `
+    <h2>O que você quer fazer?</h2>
+    <p class="dica">Toque em uma das opções abaixo.</p>
+    <div class="escolhas">
+      <button class="grande g-verde" data-ir="ver">
+        <span class="ico" aria-hidden="true">🎁</span>
+        <span>Ver o que alguém quer ganhar<small>Para quem tirou essa pessoa no sorteio</small></span>
+      </button>
+      <button class="grande g-vermelho" data-ir="editar">
+        <span class="ico" aria-hidden="true">✏️</span>
+        <span>Montar a minha lista<small>Colocar ou mudar os presentes que eu quero</small></span>
+      </button>
+    </div>
+    <p class="rodape">Feliz Natal! 🎅</p>`;
+}
+
+function telaEscolher(modo) {
+  const titulo = modo === "ver" ? "Quem você tirou?" : "Qual é o seu nome?";
+  const dica = modo === "ver" ? "Toque no nome para ver a lista de presentes." : "Toque no seu nome para montar a sua lista.";
+  $app.innerHTML = `
+    <button class="voltar" data-voltar="inicio">← Voltar</button>
+    <h2>${titulo}</h2>
+    <p class="dica">${dica}</p>
+    <div class="pessoas">
+      ${PESSOAS.map(p => {
+        const n = presentes ? doPessoa(p.id).length : null;
+        const q = n === null ? "&nbsp;" : n === 0 ? "nenhum presente ainda" : plural(n, "presente", "presentes");
+        return `<button class="pessoa" data-ir="${modo}-${p.id}">${bola(p)}<span>${esc(p.nome)}</span><span class="qtd">${q}</span></button>`;
+      }).join("")}
+    </div>`;
+}
+
+function estadoCarga() {
+  if (erroCarga) return `<div class="vazio"><span class="grande-emoji">📶</span>Não consegui carregar os presentes. Confira a internet e <button class="btn btn-claro" onclick="location.reload()">tente de novo</button></div>`;
+  if (presentes === null) return `<p class="carregando">Carregando os presentes… 🎄</p>`;
+  return null;
+}
+
+function cartaoPresente(g, editando) {
+  const foto = g.foto ? `<img class="presente-foto" src="${esc(g.foto)}" alt="Foto: ${esc(g.nome)}" loading="lazy">` : "";
+  const loja = g.link ? `<a class="btn btn-loja" href="${esc(g.link)}" target="_blank" rel="noopener noreferrer">🛒 Ver na loja${nomeDaLoja(g.link) ? ` <small style="font-weight:600;opacity:.85">(${esc(nomeDaLoja(g.link))})</small>` : ""}</a>` : "";
+  const editar = editando ? `
+      <button class="btn btn-claro" data-ir="presente-${g.pessoa}-${g.id}">✏️ Mudar</button>
+      <button class="btn btn-perigo" data-apagar="${g.id}">🗑️ Apagar</button>` : "";
+  return `
+    <article class="presente">
+      ${foto}
+      <div class="presente-corpo">
+        <h3 class="presente-nome">${esc(g.nome)}</h3>
+        ${g.obs ? `<p class="presente-obs">${esc(g.obs)}</p>` : ""}
+        ${(loja || editar) ? `<div class="acoes">${loja}${editar}</div>` : ""}
+      </div>
+    </article>`;
+}
+
+function telaVer(p) {
+  const carga = estadoCarga();
+  const lista = carga ? [] : doPessoa(p.id);
+  $app.innerHTML = `
+    <button class="voltar" data-voltar="ver">← Escolher outra pessoa</button>
+    <div class="cabeca-pessoa">${bola(p, 56)}<div><h2>Presentes da ${esc(p.nome)}</h2>
+      <p>${carga ? "" : lista.length ? `${p.nome} colocou ${plural(lista.length, "ideia", "ideias")}. Escolha uma!` : ""}</p></div></div>
+    ${carga || (lista.length
+      ? `<div class="presentes">${lista.map(g => cartaoPresente(g, false)).join("")}</div>`
+      : `<div class="vazio"><span class="grande-emoji">🤫</span>${esc(p.nome)} ainda não colocou nenhum presente.<br>Volte aqui mais tarde!</div>`)}`;
+  // "da" fica estranho para nomes masculinos
+  const h2 = $app.querySelector("h2");
+  if (["paulo", "gerson", "grilo"].includes(p.id)) h2.textContent = `Presentes do ${p.nome}`;
+}
+
+function telaEditar(p) {
+  const carga = estadoCarga();
+  const lista = carga ? [] : doPessoa(p.id);
+  $app.innerHTML = `
+    <button class="voltar" data-voltar="editar">← Não sou ${esc(p.nome)}</button>
+    <div class="cabeca-pessoa">${bola(p, 56)}<div><h2>Olá, ${esc(p.nome)}!</h2>
+      <p>Estes são os presentes que você quer ganhar.</p></div></div>
+    ${carga ? carga : `
+      <div class="presentes">
+        <button class="btn btn-principal" data-ir="presente-${p.id}-novo">＋ Adicionar presente</button>
+        ${lista.length ? lista.map(g => cartaoPresente(g, true)).join("")
+          : `<div class="vazio"><span class="grande-emoji">🎁</span>Sua lista está vazia.<br>Toque em <b>Adicionar presente</b> para começar.</div>`}
+      </div>`}`;
+}
+
+function telaForm(p, idPresente) {
+  const novo = idPresente === "novo";
+  if (!novo) {
+    const carga = estadoCarga();
+    if (carga) { $app.innerHTML = carga; return; }
+  }
+  const g = novo ? {} : (presentes || []).find(x => x.id === idPresente);
+  if (!g) { location.replace(`#editar-${p.id}`); return; }
+  // Não redesenhar o formulário enquanto a pessoa digita (atualizações do banco chegam a qualquer momento)
+  if ($app.dataset.form === `${p.id}-${idPresente}`) return;
+
+  let foto = g.foto || "";
+  $app.innerHTML = `
+    <button class="voltar" data-voltar="editar-${p.id}">← Voltar sem salvar</button>
+    <h2>${novo ? "Novo presente" : "Mudar presente"}</h2>
+    <p class="dica">Só o nome é obrigatório. O resto ajuda quem vai comprar.</p>
+    <form class="form" id="form" novalidate>
+      <div class="campo">
+        <label for="f-nome">O que você quer ganhar?</label>
+        <input type="text" id="f-nome" maxlength="120" placeholder="Ex.: Perfume, livro, camiseta…" value="${esc(g.nome || "")}" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="f-link">Link da loja <span style="font-weight:600;color:var(--tinta-suave)">(se tiver)</span></label>
+        <div class="ajuda">Copie o endereço do produto no site ou app da loja e cole aqui.</div>
+        <input type="url" id="f-link" inputmode="url" placeholder="Cole o link aqui" value="${esc(g.link || "")}" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label>Foto <span style="font-weight:600;color:var(--tinta-suave)">(se quiser)</span></label>
+        <div class="foto-caixa" id="fotoCaixa"></div>
+        <input class="foto-input" type="file" id="f-foto" accept="image/*">
+      </div>
+      <div class="campo">
+        <label for="f-obs">Detalhes <span style="font-weight:600;color:var(--tinta-suave)">(se quiser)</span></label>
+        <div class="ajuda">Tamanho, cor, marca, voltagem…</div>
+        <textarea id="f-obs" maxlength="500" placeholder="Ex.: Tamanho M, cor azul">${esc(g.obs || "")}</textarea>
+      </div>
+      <p class="erro" id="erro" hidden></p>
+      <button class="btn btn-principal" type="submit" id="salvar">💾 Salvar presente</button>
+    </form>`;
+  $app.dataset.form = `${p.id}-${idPresente}`;
+
+  const caixa = document.getElementById("fotoCaixa");
+  const inputFoto = document.getElementById("f-foto");
+  const desenharFoto = () => {
+    caixa.innerHTML = foto
+      ? `<img src="${foto}" alt="Foto do presente"><div class="foto-botoes">
+           <button type="button" class="btn btn-claro" id="trocarFoto">🔄 Trocar foto</button>
+           <button type="button" class="btn btn-perigo" id="tirarFoto">✖ Tirar foto</button></div>`
+      : `<span style="font-size:40px" aria-hidden="true">📷</span>
+         <button type="button" class="btn btn-claro" id="trocarFoto">Escolher ou tirar foto</button>`;
+    document.getElementById("trocarFoto").onclick = () => inputFoto.click();
+    const t = document.getElementById("tirarFoto"); if (t) t.onclick = () => { foto = ""; desenharFoto(); };
+  };
+  desenharFoto();
+  inputFoto.onchange = async () => {
+    const f = inputFoto.files[0]; inputFoto.value = "";
+    if (!f) return;
+    caixa.innerHTML = `<p class="carregando" style="padding:10px">Preparando a foto…</p>`;
+    try { foto = await comprimirFoto(f); } catch { avisar("Não consegui abrir essa foto. Tente outra."); }
+    desenharFoto();
+  };
+
+  document.getElementById("form").onsubmit = async ev => {
+    ev.preventDefault();
+    const erro = document.getElementById("erro");
+    const nome = document.getElementById("f-nome").value.trim();
+    const linkBruto = document.getElementById("f-link").value;
+    const link = limparLink(linkBruto);
+    const obs = document.getElementById("f-obs").value.trim();
+    erro.hidden = true;
+    if (!nome) { erro.textContent = "Escreva o nome do presente."; erro.hidden = false; document.getElementById("f-nome").focus(); return; }
+    if (link === null) { erro.textContent = "O link não parece um endereço de site. Cole o link completo ou deixe em branco."; erro.hidden = false; document.getElementById("f-link").focus(); return; }
+    const btn = document.getElementById("salvar");
+    btn.disabled = true; btn.textContent = "Salvando…";
+    const dados = { pessoa: p.id, nome, link, obs, foto, criadoEm: g.criadoEm || Date.now(), atualizadoEm: Date.now() };
+    try {
+      if (novo) await store.adicionar(dados); else await store.alterar(g.id, dados);
+      delete $app.dataset.form;
+      avisar("Presente salvo! 🎉");
+      voltarPara(`editar-${p.id}`);
+    } catch (e) {
+      console.error(e);
+      btn.disabled = false; btn.textContent = "💾 Salvar presente";
+      erro.textContent = "Não consegui salvar. Confira a internet e tente de novo."; erro.hidden = false;
+    }
+  };
+}
+
+// ====== CLIQUES ======
+document.addEventListener("click", async ev => {
+  const alvo = ev.target.closest("[data-ir],[data-voltar],[data-apagar]");
+  if (!alvo) return;
+  if (alvo.dataset.ir) { delete $app.dataset.form; ir(alvo.dataset.ir); }
+  else if (alvo.dataset.voltar) { delete $app.dataset.form; voltarPara(alvo.dataset.voltar); }
+  else if (alvo.dataset.apagar) {
+    // Apagar em dois toques: o primeiro pede confirmação
+    if (!alvo.classList.contains("confirmar")) {
+      alvo.classList.add("confirmar"); alvo.textContent = "Toque de novo para apagar";
+      setTimeout(() => { if (alvo.isConnected) { alvo.classList.remove("confirmar"); alvo.textContent = "🗑️ Apagar"; } }, 4000);
+      return;
+    }
+    alvo.disabled = true;
+    try { await store.apagar(alvo.dataset.apagar); avisar("Presente apagado"); }
+    catch { alvo.disabled = false; avisar("Não consegui apagar. Tente de novo."); }
+  }
+});
+
+// ====== CONTAGEM REGRESSIVA ======
+(function contagem() {
+  const el = document.getElementById("contagem");
+  const hoje = new Date(); const dias = Math.ceil((DATA_FESTA - hoje) / 86400000);
+  if (dias > 1) el.textContent = `Faltam ${dias} dias! 🎅`;
+  else if (dias === 1) el.textContent = "É amanhã! 🎅";
+  else if (DATA_FESTA - hoje > -6 * 3600000) el.textContent = "É hoje! 🎄";
+  else return;
+  el.hidden = false;
+})();
+
+desenhar();
+</script>
+</body>
+</html>
